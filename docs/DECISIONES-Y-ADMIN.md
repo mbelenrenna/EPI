@@ -8,7 +8,7 @@ Repositorio: https://github.com/mbelenrenna/EPI
 Publicación actual de prueba: https://escuela-pensamiento-intuitivo.pages.dev/programas/inspiraccion-nivel-2/
 La landing consolidada es la versión visual aprobada por Belén en escritorio y celular. Los cambios editoriales de Agustín se revisan primero en su Google Doc y luego se aplican; no sincronizar ese documento automáticamente con la web.
 Documento de revisión: https://docs.google.com/document/d/1C2L1rb85k8ReD59DzyUU3skldS4_pCgS69gmmW0XwnA/edit
-El acceso del conector al documento está pendiente. El color rojo representa propuesta de Agustín, no texto ya aprobado.
+El documento es accesible mediante el conector. La devolución de Agustín se aplica por pedido de Belén, con correcciones ortográficas y sintácticas sin introducir ideas nuevas. Los comentarios editoriales no aparecen en la web.
 
 ## Referencias permanentes
 
@@ -23,13 +23,13 @@ Lora y Montserrat; paleta e imágenes reales de la Escuela. Escala tipográfica 
 InspirAcción es entrenamiento y experiencia, no un catálogo de cursos. Nivel 2 es continuidad de Nivel 1.
 Invitaciones visibles después de identificación, experiencia, formato, beneficio y testimonios; inscripción directa desde navegación.
 Menú móvil, anclas nativas suaves, foco de teclado, reducción de movimiento y preguntas desplegables. Contacto con Jose; no tapar campos con elementos flotantes.
-Ocho testimonios con fragmentos verificables; la fuente los identifica como Nivel 1. No atribuirlos a Nivel 2.
+Diez testimonios aportados por Agustín en el documento de revisión como participantes de Nivel 2, agrupados en cambios de percepción y cambios concretos. Conservar la redacción de las citas y los nombres abreviados proporcionados. Guadalupe incluye referencia a N1, N2 y Formación.
 
 ## Parámetros vigentes de Nivel 2
 
 - Ruta permanente prevista: /programas/inspiraccion-nivel-2/ (sin año ni generación en URL).
 - Generación: 4. Cursada: enero y febrero de 2027; dos meses. Fecha exacta de inicio no confirmada.
-- Requisito: haber completado Nivel 1.
+- Requisito comunicado por Agustín: certificado de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
 - Hasta 15/10/2026 inclusive: valor USD 300; reserva USD 150; saldo USD 150 hasta 05/01/2027.
 - Desde 16/10/2026 hasta 05/11/2026 inclusive: valor USD 350; reserva USD 175; saldo USD 175 hasta 05/01/2027.
 - Después del 05/11/2026: valor USD 400; pago completo. Cierre definitivo de inscripción pendiente; no inventar fecha.
@@ -86,7 +86,7 @@ Base inicial separada en este repositorio:
 
 Ejemplo: node scripts/build-nivel2.cjs output/nivel2-preview.html
 
-La página publicada permanece intacta. Antes de cerrar la migración, el proceso de publicación debe consumir estos archivos y verificar que el HTML generado no se edite por separado. El admin escribirá en esta misma fuente; no importará/exportará copias manuales que se desactualicen.
+El HTML de Nivel 2 se genera desde la plantilla y los textos separados; el compilador admite campos y listas de testimonios, escapando el contenido. No editar el HTML generado por separado. La publicación sigue siendo manual; falta automatizar su generación y despliegue. El admin escribirá en esta misma fuente; no importará/exportará copias manuales que se desactualicen.
 El Google Doc es revisión editorial, no una fuente automática de publicación. Guardar borradores no equivale a publicar; un cambio sólo llega a la web al aprobar/publicar y terminar exitosamente el despliegue.
 
 Separar contenido, configuración comercial y lógica técnica. El motor consume datos validados compartidos por web y backend; no mantener precios distintos en front y servidor.

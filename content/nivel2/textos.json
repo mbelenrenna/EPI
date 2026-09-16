@@ -16,89 +16,121 @@
     "presentacion": {
       "texto001": "Generación 4 · Enero 2027",
       "texto002": "Nivel 2.",
-      "texto003": "El laboratorio del juego.",
-      "texto004": "Una vez entrenado el método contra-intuitivo, liberamos el “contra” y comenzamos a experimentar el método de la verdadera intuición.",
+      "texto003": "El Laboratorio del Juego",
+      "texto004": "2 meses de grupo de estudios y laboratorios aplicados a todas las áreas de tu vida, usando tus situaciones cotidianas para liberar programas limitantes y lealtades inconscientes y desbloquear tu pensamiento intuitivo.",
       "texto005": "Enero + febrero 2027",
       "texto006": "2 meses para seguir entrenando.",
       "texto007": "Conocer el valor early bird",
       "texto008": "Conocer la experiencia ↓",
-      "texto009": "Convocatoria exclusiva para quienes completaron InspirAcción Nivel 1."
+      "texto009": "Requisito: certificado de InspirAcción Nivel 1."
     },
     "continuidad": {
-      "texto001": "Una continuidad, no empezar de cero",
+      "texto001": "De método a filosofía de vida",
       "texto002": "Si terminaste Nivel 1, esto es lo que sigue.",
-      "texto003": "En Nivel 1 aprendiste a observar tu mente, reconocer sus automatismos y dejar de pelear de igual a igual contra vos mismo.",
-      "texto004": "En Nivel 2 el desafío cambia: sostener ese estado, estudiar la intuición en profundidad y usar cada situación cotidiana como parte del entrenamiento.",
+      "texto003": "En Nivel 1 aprendiste a ver los mecanismos de enredo que usa el ego para bloquearte y a comenzar a cuestionar tus percepciones. En muchos casos, a poner límites y concretar cambios de vida. Esto te trajo una extraña combinación entre resistencia y paz. Pero confirmaste tu resonancia inicial.",
+      "texto004": "En Nivel 2 el método se vuelve intuitivo porque conocemos la verdadera intuición y las trampas de la mente.",
       "texto005": "No volvemos a explicar desde el principio. Retomamos el camino desde la experiencia que ya atravesaste y entramos al laboratorio.",
-      "texto006": "Inscribirme a Nivel 2 →"
+      "texto006": "Inscribirme a Nivel 2 →",
+      "texto007": "Saliste del ego, podés ver más allá. Ahora comienza el verdadero juego.",
+      "texto008": "Ahora comienza el desafío de hacer uso activo de esta nueva habilidad y extenderla siendo testimonio y ejemplo para otros. Para esto es clave una comunidad comprometida con la práctica y el estudio profundo, una supervisión de la aplicación del método y el análisis de las mecánicas del ego en casos reales.",
+      "texto009": "Nivel 2 presenta algo más que un método: una filosofía de vida cuya asimilación requiere haber atravesado el compromiso práctico de “El Entrenamiento del Guerrero” (Nivel 1)."
     },
     "frase": {
-      "texto001": "“La inspiración es la capacidad de ver la función de las cosas. Si observás tu intuición, vas a confirmarla.”"
+      "texto001": "“La acción inspirada es la habilidad de invertir las polaridades de nuestras percepciones para desvelar el propósito de lo que nos ocurre en la vida.”",
+      "texto002": "Escuela del Pensamiento Intuitivo"
     },
     "experiencia": {
       "texto001": "Del método contra-intuitivo al método intuitivo",
-      "texto002": "Tu vida se vuelve el laboratorio.",
+      "texto002": "Claves de este programa:",
       "texto003": "Dos meses de estudio y práctica aplicados directamente a todas las áreas de tu vida: para habitar y reconocer la intuición, comprender sus fundamentos científicos y espirituales y entrenarla en situaciones reales.",
       "texto004": "01",
-      "texto005": "Detectar antes",
-      "texto006": "Reconocer los cambios de estado interno y salir con mayor rapidez del sufrimiento, el lamento o la culpa.",
+      "texto005": "Observar y detectar con anticipación",
+      "texto006": "La velocidad en este juego implica reconocer los cambios de estado interno y salir con mayor rapidez del sufrimiento, el estrés o la culpa.",
       "texto007": "02",
-      "texto008": "Accionar distinto",
-      "texto009": "Dejar la parálisis por análisis y tomar decisiones desde una intuición entrenada, incluso sin certezas.",
+      "texto008": "Asimilar y liberar programas antiguos",
+      "texto009": "La habilidad principal de la libertad emocional es la correcta digestión y asimilación de la realidad. ¿Qué hago ahora con esto que sucedió? ¿Qué siento? ¿Qué me conviene? Para esto aplicamos en casos reales y en tiempo real la comprensión y el cambio de perspectiva.",
       "texto010": "03",
-      "texto011": "Crear evidencia",
-      "texto012": "Transformar ideas y “problemas” en proyectos, elecciones y movimientos concretos.",
+      "texto011": "Accionar distinto",
+      "texto012": "Se trata de la toma de decisiones intuitivas, libres de condiciones, cargas y culpas, gracias a tu entrenamiento anterior, incluso sin certezas.",
       "texto013": "04",
-      "texto014": "Sostener el juego",
-      "texto015": "Dejar de ubicar el problema afuera y elegir qué estado interno te conviene habitar.",
+      "texto014": "Pasá de personaje a jugador",
+      "texto015": "Tomá el protagonismo de tu vida desde la inteligencia emocional práctica y el coraje que requiere ser creador de tu camino.",
       "texto016": "No para integrar algo más, sino por el placer genuino de explorar los principios que desencadenaron tu experiencia en Nivel 1 y continuar entrenando con tu grupo.",
       "texto017": "Inscribirme a Nivel 2"
     },
     "formato": {
-      "texto001": "Cómo se vive",
+      "texto001": "Formato",
       "texto002": "Estudio, práctica y acompañamiento.",
       "texto003": "Clases grabadas",
-      "texto004": "Para profundizar los temas, comprender los entrenamientos y volver al material cuando lo necesites.",
+      "texto004": "Para profundizar los temas de cada módulo y complementar las prácticas.",
       "texto005": "Manual de estudio y entrenamientos",
       "texto006": "Conceptos organizados de forma práctica, sencilla y aplicable en la vida cotidiana.",
       "texto007": "Sesiones de Aplicación & Consultoría",
-      "texto008": "Casos reales, revisión de procesos y dudas. Las sesiones quedan grabadas.",
-      "texto009": "Una tribu que acompaña",
-      "texto010": "Un espacio cotidiano para compartir desafíos, ejemplos y preguntas.",
+      "texto008": "Abordaje de casos reales, revisión de procesos y dudas. Las sesiones quedan grabadas.",
+      "texto009": "Grupo de WhatsApp",
+      "texto010": "Una extensión de las sesiones en vivo de Zoom: desafíos semanales, exposición de ejemplos y envío de audios respondiendo dudas y profundizando con explicaciones.",
       "texto011": "Inscribirme a Nivel 2 →"
     },
     "sesiones": {
       "texto001": "Un beneficio por seguir entrenando",
       "texto002": "40% de descuento en sesiones individuales con Agus.",
-      "texto003": "Parte de la esencia de la Escuela es mantenernos entrenados, unidos y construir comunidad.",
-      "texto004": "Por eso, mientras seas alumno regular y estés entrenando en cualquiera de sus formatos, contás con un 40% de descuento en las sesiones uno a uno con Agus.",
+      "texto003": "Parte de la esencia de la Escuela es asumir tu libertad de potenciar tu camino con una guía personalizada. Las sesiones 1-1 del MCI guiadas por Agustín son procesos de acompañamiento de corta duración (entre 1 y 3 sesiones).",
+      "texto004": "Por eso, mientras seas alumno regular y estés cursando en cualquiera de nuestros programas, contás con un 40% de descuento en las sesiones uno a uno con Agus.",
       "texto005": "Ver la inscripción a Nivel 2 →"
     },
     "testimonios": {
       "texto001": "Lo que cambia cuando entrenás tu libertad",
       "texto002": "La experiencia, contada por quienes ya la atravesaron.",
-      "texto003": "Testimonios de participantes de InspirAcción Nivel 1.",
-      "texto004": "“Sobre todo lo valió por que fue muy desafiante y siento que lo pasé por el cuerpo y ahora tengo otra creencia sobre quien soy y lo que puedo hacer y como ver situaciones y conflictos.”",
-      "texto005": "Mariano Tombeur",
-      "texto006": "“Inspiracción a diferencia de otros programas, te da herramientas REALES Y PRÁCTICAS para aplicar HOY en tu vida. No te pide nada que no tengas, no subestima, al contrario, te obliga amorosamente a ponerte en el lugar de creador que te corresponde como ser humano.”",
-      "texto007": "Yamila Melano",
-      "texto008": "“Y que confíe en que se dieron las condiciones perfectas para que llegue a este contenido, que se entregue al juego de lo que es, y se prepare para despertar porque esto es picantiiiisimooo”",
-      "texto009": "Wanda Griffero",
-      "texto010": "“Es un aprendizaje, para volver a revisarlo y practicarlo, y entrenarlo y volverlo a ver y volver a entrenar.”",
-      "texto011": "Alejandro Figueras",
-      "texto012": "“Combina todo lo que en otros lugares solo es info aislada y eso genera confusión y más ruido mental, el tener todo en un solo lugar ayuda darle mucho más sentido a todo y darnos cuenta que eso que pareciera ser 'diferente' no es nada más que lo mismo dicho de otra forma”",
-      "texto013": "Melissa Natalia Palacios",
-      "texto014": "“Cambio mi forma de ver la realidad, por ende de accionar y de vivir.”",
-      "texto015": "Bernarda Parra",
-      "texto016": "“Hacerse responsable de uno mismo tambien tiene que ver con explorar los lugares mas ocultos que a veces ni sabemos que los tenemos pero el grupo y la comunidad acompaña de forma amorosa y que cada uno va a su tiempo, no hay prisa.”",
-      "texto017": "Camila Mansilla Maturana",
-      "texto018": "“El contenido es el diferencial y la forma en la que Agus lo explica.”",
-      "texto019": "Aldana López",
-      "texto020": "Continuar mi entrenamiento →"
+      "texto003": "Testimonios de participantes de InspirAcción Nivel 2.",
+      "texto020": "Continuar mi entrenamiento →",
+      "percepcion": "Cambios en la percepción",
+      "concretos": "Cambios concretos y medibles",
+      "items": [
+        {
+          "texto": "“Descubrí que puedo elegir como actuar o responder ante ciertas situaciones y sentirme libre con eso. Puede también experimentar la sensación de no desesperarme por resolver y habitar la incertidumbre.”",
+          "nombre": "Guadalupe F · N1, N2 y Formación"
+        },
+        {
+          "texto": "“InspirAcción a diferencia de otros programas, te da herramientas REALES Y PRÁCTICAS para aplicar HOY en tu vida. No te pide nada que no tengas, no subestima, al contrario, te obliga amorosamente a ponerse en el lugar de creador que te corresponde como ser humano.”",
+          "nombre": "Yamila M"
+        },
+        {
+          "texto": "“La transformación ha sido acelerada, solté la culpa, la vergüenza y el poder merecer realmente como me siento. La nueva forma de vincularme con lo que soy y lo que hago empieza a tener coherencia... elegí hoy volver al juego, la alegría a disfrutar.”",
+          "nombre": "Camila F"
+        },
+        {
+          "texto": "“A meses de comenzar el entrenamiento me mudé a otra ciudad, y cambié de trabajo. Volví a encontrarme con un chico que hacía meses no veía, y hoy es mi pareja. El vínculo con mi papá se transformó y hoy pensamos en proyectos juntos. [...] Antes no me gustaba bailar, ahora sí y doy clases de eso para enseñarlo y aprenderlo aún más.”",
+          "nombre": "Guadalupe F"
+        },
+        {
+          "texto": "“Puse límites concretos a mi madre. Avance, contraté equipo e invertí a favor de mi negocio. Retome mi podcast. Empecé a pagar deudas ya estoy casi en cero.”",
+          "nombre": "Tamara V"
+        },
+        {
+          "texto": "“Eche a alguien a los 2 meses de estar trabajando porque 'lo sentí' y termine contratando 2 personas con las que estoy más que satisfecho. Económicamente mi empresa se volvió rentable y escalable [...] Me mudo en 2 semanas a un depto más grande y lindo.”",
+          "nombre": "Ricardo D"
+        },
+        {
+          "texto": "“Deje de trabajar con mi socio que hace años me molestaba su forma de ver las cosas. puse límites a mis servicios, horarios y la hiper flexibilidad de querer agradar siempre. cambie a mi hija de colegio a jornada simple para que tenga más tiempo de ocio [...] me endeude económicamente, esto me angustiaba y paraliza, pero hoy lo veo como una inversión que está en proceso de equilibrio”",
+          "nombre": "Camila F"
+        },
+        {
+          "texto": "“Decidí encarar una charla con mi papá biológico, al que no le hablo desde mis 4 años, si bien la charla no ocurrió, el solo hecho de hablarle y decírselo me liberó un montón de peso, cargas, miedos. [...] Apareció una mudanza que venía deseando, con el espacio para mis clases que también venía pidiendo.”",
+          "nombre": "Lorena A"
+        },
+        {
+          "texto": "“Menos enojos, elongo y escribo todas las mañanas, me veo más linda. Cambió bastante el modo de pensar a mí papá y x ende de vincular me con él. [...] Retomé el activismo de manera fluida sin sufrir sin culpas sin miedo sin vergüenza.”",
+          "nombre": "Mariana D"
+        },
+        {
+          "texto": "“Algo de mi vínculo con mi papa se movió, y algo súper interesante es que pude darle un abrazo, algo que no ocurría, no se daba, no fluía, como con cierta resistencia, y un dia se destrabo, rompí con esa barrera de distancia. fue un momento hermoso, aún así desconocido.”",
+          "nombre": "Natalia C"
+        }
+      ]
     },
     "valor": {
       "texto001": "Early bird · Cupos limitados",
-      "texto002": "Un beneficio por elegir seguir entrenando.",
+      "texto002": "Un beneficio por tu inscripción temprana.",
       "texto003": "Sos parte de la Escuela y ya conocés la experiencia. Podés reservar tu lugar con el valor vigente y continuar el recorrido que ya comenzaste.",
       "texto004": "Early bird · Hasta el 15/10",
       "texto005": "USD 300",
