@@ -45,9 +45,21 @@
   const result = document.querySelector('.payment-result');
   const instructions = result.querySelector('[data-payment-instructions]');
   const receipt = result.querySelector('[data-receipt-link]');
+  const copyIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4"/></svg>';
+  result.addEventListener('click', async event => {
+    const button = event.target.closest('[data-copy-bank]');
+    if (!button) return;
+    const feedback = result.querySelector('.copy-feedback');
+    try {
+      await navigator.clipboard.writeText(button.dataset.copyBank);
+      feedback.textContent = button.getAttribute('aria-label') === 'Copiar alias' ? 'Alias copiado.' : 'CBU copiado.';
+    } catch {
+      feedback.textContent = 'No se pudo copiar automáticamente. Podés seleccionar el dato y copiarlo.';
+    }
+  });
   const paymentCopy = {
-    ARS_GALICIA: '<p><b>Transferencia en pesos argentinos · Banco Galicia</b></p><p>Alias: <strong>Epi.arg</strong><br>CBU: <strong>0070267830004086914782</strong></p>',
-    USD_GALICIA: '<p><b>Transferencia bancaria en dólares · Banco Galicia</b></p><p>Titular: Agustín Darío Trowell Kissam<br>CBU: <strong>0070267831004062922717</strong></p>',
+    ARS_GALICIA: '<p><b>Transferencia en pesos argentinos · Banco Galicia</b></p><p class="bank-detail">Alias: <strong>Epi.arg</strong> <button type="button" class="copy-bank" data-copy-bank="Epi.arg" aria-label="Copiar alias"></button></p><p class="bank-detail">CBU: <strong>0070267830004086914782</strong> <button type="button" class="copy-bank" data-copy-bank="0070267830004086914782" aria-label="Copiar CBU"></button></p>',
+    USD_GALICIA: '<p><b>Transferencia bancaria en dólares · Banco Galicia</b></p><p>Titular: Agustín Darío Trowell Kissam</p><p class="bank-detail">CBU: <strong>0070267831004062922717</strong> <button type="button" class="copy-bank" data-copy-bank="0070267831004062922717" aria-label="Copiar CBU"></button></p>',
     WISE: '<p><b>Pago internacional mediante Wise</b></p><p><a href="https://wise.com/pay/me/agustindariot" target="_blank" rel="noopener">Abrir Wise para realizar el pago ↗</a></p>',
     PAYPAL: '<p><b>Pago internacional mediante PayPal</b></p><p><a href="https://paypal.me/AgustinTrowellKissam" target="_blank" rel="noopener">Abrir PayPal para realizar el pago ↗</a></p><p>PayPal tiene un 5% de recargo.</p>',
     OTHER: '<p>Consultá con Jose la cotización del día y el medio de pago adecuado para tu moneda.</p>'
@@ -64,6 +76,12 @@
       if (!payload.ok) throw new Error(payload.error || 'No pudimos registrar la reserva.');
       const amount = payload.reserve;
       instructions.innerHTML = `<p class="reservation-summary">Reserva vigente: <strong>USD ${amount}</strong></p>${paymentCopy[data.paymentMethod]}`;
+      instructions.querySelectorAll('[data-copy-bank]').forEach(button => { button.innerHTML = copyIcon; });
+      const copyFeedback = document.createElement('p');
+      copyFeedback.className = 'copy-feedback';
+      copyFeedback.setAttribute('role', 'status');
+      copyFeedback.setAttribute('aria-live', 'polite');
+      instructions.append(copyFeedback);
       let detail = 'La reserva indicada es USD ' + amount + '.';
       const quote = payload.quote;
       if (data.paymentMethod === 'ARS_GALICIA') {
