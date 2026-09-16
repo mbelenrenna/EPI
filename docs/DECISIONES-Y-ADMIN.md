@@ -23,6 +23,7 @@ Lora y Montserrat; paleta e imágenes reales de la Escuela. Escala tipográfica 
 InspirAcción es entrenamiento y experiencia, no un catálogo de cursos. Nivel 2 es continuidad de Nivel 1.
 Invitaciones visibles después de identificación, experiencia, formato, beneficio y testimonios; inscripción directa desde navegación.
 Menú móvil, anclas nativas suaves, foco de teclado, reducción de movimiento y preguntas desplegables. Contacto con Jose; no tapar campos con elementos flotantes.
+La landing temporal es independiente: los logos del encabezado y footer no enlazan a la Home/hub aún en preparación. Escala móvil contenida: títulos de sección 25px, presentación 32px, lectura general 15px; controles de formulario 16px. Fotos y espaciados móviles compactos sin modificar la escala de escritorio.
 Diez testimonios aportados por Agustín en el documento de revisión como participantes de Nivel 2, agrupados en cambios de percepción y cambios concretos. Conservar la redacción de las citas y los nombres abreviados proporcionados. Guadalupe incluye referencia a N1, N2 y Formación.
 
 ## Parámetros vigentes de Nivel 2

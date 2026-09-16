@@ -9,6 +9,7 @@ assert(html.includes('<strong>Cursada:</strong> Enero y Febrero 2027')&&html.inc
 assert(!html.includes('No volvemos a explicar desde el principio'));
 assert(html.includes('<strong>Saliste del ego')&&html.includes('<strong>En Nivel 2</strong>'));
 assert.equal((html.match(/<footer>/g)||[]).length,1);
+assert(!html.includes('href="/"'),'Landing independiente sin enlace a Home');
 assert(!html.includes('direct-access'));
 assert(!html.includes('Podés indicarlo para que el equipo'));
 assert(html.includes('class="nav-value" href="#inversion"'));
