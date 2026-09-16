@@ -5,7 +5,7 @@
   "currency": "USD",
   "listValue": 400,
   "balanceDue": "2027-01-05",
-  "commercialTimeZone": null,
+  "commercialTimeZone": "America/Argentina/Buenos_Aires",
   "registrationClose": null,
   "stages": [
     {"id": "early-bird", "throughInclusive": "2026-10-15", "value": 300, "reserve": 150},

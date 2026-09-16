@@ -2,7 +2,9 @@
   const root = document.querySelector('[data-pricing]');
   if (!root) return;
   const today = new Date();
-  const dateKey = Number(`${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, '0')}${String(today.getDate()).padStart(2, '0')}`);
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Argentina/Buenos_Aires', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(today);
+  const part = type => parts.find(item => item.type === type).value;
+  const dateKey = Number(part('year') + part('month') + part('day'));
   const stages = dateKey <= 20261015 ? {
     label: 'Early bird · Cupos limitados', deadline: 'Early bird · Hasta el 15/10', value: 'USD 300',
     copy: 'Ahorrás USD 100 sobre el valor de lista. Congelalo abonando <b>USD 150 ahora</b> y completá el 50% restante hasta el 5 de enero.',

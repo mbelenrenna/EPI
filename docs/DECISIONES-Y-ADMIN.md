@@ -40,7 +40,7 @@ Diez testimonios aportados por Agustín en el documento de revisión como partic
 - Beneficio: 40% en sesiones con Agus mientras sea alumno regular entrenando en cualquier formato.
 - Formación: comienza marzo de 2027, para quienes completaron Nivel 2. Duración y valores no confirmados.
 
-Las fechas/valores están hoy en JavaScript de la landing y Apps Script. Esto NO es todavía una fuente única administrable. Antes de habilitar edición debe eliminarse esa duplicación y fijarse una zona horaria comercial con Belén; el servidor decide el importe, el navegador lo muestra.
+Las fechas/valores están hoy en JavaScript de la landing y Apps Script. Esto NO es todavía una fuente única administrable. Antes de habilitar edición debe eliminarse esa duplicación; el servidor decide el importe, el navegador lo muestra. Zona horaria comercial confirmada: America/Argentina/Buenos_Aires. La landing usa esa zona, independiente de la zona local del dispositivo; el código guardado de Apps Script también la usa.
 
 ## Operación actual
 
@@ -117,12 +117,12 @@ El admin completo y nuevas automatizaciones no se consideran incluidos automáti
 
 ### Footer único
 
-La landing temporal integra “Seguí en contacto con la Escuela”, Instagram de Escuela, Instagram de Agus, podcast y solicitar sesión en un solo footer.
+La landing temporal integra “Seguí en contacto con la Escuela”, Instagram de Escuela, Instagram de Agus, podcast y solicitar sesión en un solo footer. Accesos apilados también en desktop, con íconos de Instagram y Spotify. Instagram de Agus confirmado por Belén: https://www.instagram.com/agustintrowell/.
 Al construir el ecosistema, extraer un único componente/footer compartido por todas las páginas y una única colección de enlaces. Conservar esos cuatro accesos básicos y sumar navegación/acceso alumno pertinente. No mantener versiones independientes por página.
 Los textos de la devolución de Agustín se aplican según la interpretación confirmada por Belén: mantener etiquetas de cursada/duración, botones originales de presentación, cuerpo de continuidad a la derecha, negritas y agrupación de testimonios. No conservar párrafos reemplazados como contenido adicional.
 
 www sigue apuntando a infraestructura anterior; campus no resuelve según revisión del 16/09/2026. No modificar DNS sin coordinar Systeme, Hostinger y enlaces /school/* de alumnos.
 El acceso actual de comunidad responde; falta probar acceso autenticado a cursos.
-Pendientes reales: prueba ARS con endpoint actual, interés en Formación y todas las transiciones administrativas; identidad del Instagram de Agus.
+Pendientes reales: prueba ARS con endpoint actual, interés en Formación y todas las transiciones administrativas.
 El checkbox de Formación no lleva aclaración adicional. La cotización muestra valor y fecha/hora de actualización; se conserva blue venta de DólarHoy como referencia de cálculo.
 La publicación actual fue manual por Cloudflare Pages; actualizar GitHub no acredita conexión automática GitHub -> Pages.
