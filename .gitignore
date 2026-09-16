@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.wrangler/
+.cloudflare-preview-v1/
+.env
+.env.*
+.dev.vars*
+!.env.example
+!.dev.vars.example
+output/
+outputs/

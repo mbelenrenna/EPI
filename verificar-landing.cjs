@@ -1,0 +1,21 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const base='programas/inspiraccion-nivel-2/';
+const html=fs.readFileSync(base+'index.html','utf8'),js=fs.readFileSync(base+'nivel2.js','utf8');
+assert(!html.includes('pricing.css')&&!html.includes('form.css'));
+assert(html.includes('class="nav-enroll" href="#inscripcion"'));
+assert(html.includes('Testimonios de participantes de InspirAcción Nivel 1.'));
+const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]));
+for(const m of html.matchAll(/href="#([^"]+)"/g)) assert(ids.has(m[1]),'Ancla inexistente '+m[1]);
+assert((html.slice(0,html.indexOf('id="inversion"')).match(/href="#inscripcion"/g)||[]).length>=4);
+const pricingScript=js.slice(0,js.indexOf('\n\n'));
+for(const [date,value,reserve] of [['2026-10-15T12:00:00','USD 300','150'],['2026-10-16T12:00:00','USD 350','175'],['2026-11-05T12:00:00','USD 350','175'],['2026-11-06T12:00:00','USD 400','']]){
+ const els={};const el=s=>els[s]??={textContent:'',innerHTML:'',remove(){this.removed=true}};
+ const root={querySelector:el};const links=[el('navvalue'),el('herovalue')];
+ vm.runInNewContext(pricingScript,{Date:class extends Date{constructor(){super(date)}},document:{querySelector:s=>s==='[data-pricing]'?root:el(s),querySelectorAll:()=>links}});
+ assert.equal(el('[data-current-value]').textContent,value);
+ if(reserve)assert(el('[data-stage-cta]').textContent.includes(reserve));
+ if(date>'2026-10-15T23:59:59') assert(links.every(l=>!l.textContent.includes('early bird')));
+ console.log('Etapa correcta: '+date+' '+value);
+}
+new Function(js);
+console.log('PASS: sintaxis, anclas, CTA previas, estilos únicos y fechas límite.');

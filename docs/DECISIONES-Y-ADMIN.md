@@ -1,0 +1,108 @@
+# Decisiones vigentes y administración del sitio
+
+Este documento describe el estado aprobado, los parámetros reutilizables y la arquitectura objetivo. No es un registro de cada corrección. Al cambiar una decisión, actualizar aquí su estado vigente; Git conserva el historial técnico.
+
+## Estado y fuente del proyecto
+
+Repositorio: https://github.com/mbelenrenna/EPI
+Publicación actual de prueba: https://escuela-pensamiento-intuitivo.pages.dev/programas/inspiraccion-nivel-2/
+La landing consolidada es la versión visual aprobada por Belén en escritorio y celular. Los cambios editoriales de Agustín se revisan primero en su Google Doc y luego se aplican; no sincronizar ese documento automáticamente con la web.
+Documento de revisión: https://docs.google.com/document/d/1C2L1rb85k8ReD59DzyUU3skldS4_pCgS69gmmW0XwnA/edit
+El acceso del conector al documento está pendiente. El color rojo representa propuesta de Agustín, no texto ya aprobado.
+
+## Referencias permanentes
+
+NORTE-DEL-PROYECTO.md: objetivo, identidad y control integral obligatorio.
+VOZ-Y-CRITERIOS.md: voz editorial y límites de redacción.
+Este archivo: arquitectura, parámetros de operación y administración.
+No subir conversaciones, presupuestos personales, listados de alumnos, comprobantes ni claves al repositorio público. No mantener copias de prueba como páginas navegables.
+
+## Diseño y recorrido aprobados
+
+Lora y Montserrat; paleta e imágenes reales de la Escuela. Escala tipográfica contenida, botones redondeados, fondos diferenciados y lectura legible.
+InspirAcción es entrenamiento y experiencia, no un catálogo de cursos. Nivel 2 es continuidad de Nivel 1.
+Invitaciones visibles después de identificación, experiencia, formato, beneficio y testimonios; inscripción directa desde navegación.
+Menú móvil, anclas nativas suaves, foco de teclado, reducción de movimiento y preguntas desplegables. Contacto con Jose; no tapar campos con elementos flotantes.
+Ocho testimonios con fragmentos verificables; la fuente los identifica como Nivel 1. No atribuirlos a Nivel 2.
+
+## Parámetros vigentes de Nivel 2
+
+- Ruta permanente prevista: /programas/inspiraccion-nivel-2/ (sin año ni generación en URL).
+- Generación: 4. Cursada: enero y febrero de 2027; dos meses. Fecha exacta de inicio no confirmada.
+- Requisito: haber completado Nivel 1.
+- Hasta 15/10/2026 inclusive: valor USD 300; reserva USD 150; saldo USD 150 hasta 05/01/2027.
+- Desde 16/10/2026 hasta 05/11/2026 inclusive: valor USD 350; reserva USD 175; saldo USD 175 hasta 05/01/2027.
+- Después del 05/11/2026: valor USD 400; pago completo. Cierre definitivo de inscripción pendiente; no inventar fecha.
+- Cupos limitados, sin publicar cantidad de inscritos no verificada.
+- Dólar de referencia ARS: blue venta de DólarHoy; mostrar actualización y no reutilizar una cotización fallida como actual.
+- PayPal: 5% de recargo. Otras monedas/condiciones especiales: consulta humana.
+- Jose es Josefina, sin tilde: WhatsApp +52 1 998 179 7419.
+- Beneficio: 40% en sesiones con Agus mientras sea alumno regular entrenando en cualquier formato.
+- Formación: comienza marzo de 2027, para quienes completaron Nivel 2. Duración y valores no confirmados.
+
+Las fechas/valores están hoy en JavaScript de la landing y Apps Script. Esto NO es todavía una fuente única administrable. Antes de habilitar edición debe eliminarse esa duplicación y fijarse una zona horaria comercial con Belén; el servidor decide el importe, el navegador lo muestra.
+
+## Operación actual
+
+Formulario básico -> Apps Script de la cuenta de la Escuela -> Google Sheets y contacto/etiquetas en Systeme.
+Después de guardar, se muestran instrucciones de pago y WhatsApp preparado. La persona adjunta el comprobante y envía: no hay notificación automática a Jose sólo por completar el formulario.
+Equipo verifica el pago. Planilla controla pagos/saldo y estados; sincronización periódica con Systeme.
+Etiqueta principal NIVEL 2 - G4; estados administrados Reserva iniciada, Pago confirmado, Inscripción completa, Cancelado, No continuó; interés en Formación separado.
+Claves sólo del lado servidor/propiedades del script; nunca en el admin público ni en Git.
+Formulario posterior previsto en Jotform para datos del proceso y aceptación documentada; condiciones esenciales conocidas antes de pagar. Validación legal y mecanismo de firma pendientes.
+
+## Administración objetivo
+
+Dos perfiles sobre la misma herramienta, con permisos aplicados por el servidor:
+
+| Perfil | Puede administrar | Requiere trabajo técnico |
+|---|---|---|
+| Agustín editor | Textos, CTA, enlaces aprobados, imágenes dentro de formatos definidos; fechas/valores de etapas existentes si se le habilita | Nuevas reglas, integraciones, arquitectura o cambios de diseño |
+| Belén administradora | Contenidos, ediciones, etapas, fechas/valores, apertura/cierre, mensajes y parámetros habilitados; publicar/restaurar | Nuevos algoritmos, seguridad, pasarelas, nuevos campos o integraciones requieren desarrollo |
+
+No bloquear cambios simples artificialmente para justificar mantenimiento. La configuración de una regla existente no es una nueva lógica. Alcance y permisos editoriales se acuerdan explícitamente; el rol técnico no expone secretos.
+Hasta contar con admin, mantenimiento manual pactado; la propuesta comercial detallada permanece fuera del repositorio público.
+
+### Interfaz requerida
+
+- Acceso privado con cuentas individuales, no contraseña/key incrustada en HTML.
+- Selector Home/programa/edición y campos legibles agrupados por sección.
+- Formularios para texto, fecha, valor, porcentaje y URL; no editar HTML/JS.
+- Guardar borrador, vista previa real desktop/mobile, publicar y restaurar.
+- Resumen de diferencias antes de publicar; advertir cambios que afectan pagos.
+- Vista de cronograma: “vigente hoy” y etapas futuras sin mostrarlas como opciones comerciales al alumno.
+- Acceso útil para Belén también, sin depender de Codex para operación diaria.
+
+### Fuente única y controles
+
+Separar contenido, configuración comercial y lógica técnica. El motor consume datos validados compartidos por web y backend; no mantener precios distintos en front y servidor.
+Separar programa estable de edición/generación. IDs y rutas estables; no modificar acuerdos ya confirmados al editar futuras etapas.
+Validar fechas ordenadas/no superpuestas, valores positivos, reserva/saldo/recargo, moneda, URLs seguras y contenido sin scripts.
+Por cada reserva guardar edición, etapa, valor y cotización aceptados. Cambios futuros no recalculan contratos anteriores indiscriminadamente.
+El servidor verifica permisos, calcula etapa vigente y valida entrada; ocultar controles en frontend no basta.
+Versionado interno para publicación/restauración, aun sin documentar cada cambio editorial en archivos narrativos.
+No mezclar admin de contenidos con gestión académica completa. Sheets/Systeme se conservan inicialmente; tablero de alumnos es un módulo separado.
+
+### Decisión tecnológica pendiente
+
+Elegir CMS con autenticación/roles y publicación compatible con GitHub/Cloudflare, o admin propio con backend privado. No seleccionar por apariencia solamente ni construir un panel público que sólo descargue JSON.
+Comparar costo, permisos, vista previa, rollback, edición comercial y vínculo con Apps Script antes de contratar/conectar una plataforma.
+El admin completo y nuevas automatizaciones no se consideran incluidos automáticamente en la optimización ya presupuestada; acordar el módulo correspondiente.
+
+## Siguiente implementación
+
+1. Sincronizar repositorio aprobado sin cambiar textos esperando feedback.
+2. Confirmar zona horaria comercial y quién puede publicar valores.
+3. Extraer contenidos a esquema reutilizable y pruebas que mantengan diseño/render actual.
+4. Centralizar configuración front/backend sin modificar reservas existentes.
+5. Conectar admin autenticado con borradores, validación, preview y publicación.
+6. Probar edición de un texto, fecha y etapa sin Codex; seguridad y recuperación.
+7. Capacitación breve de Agustín y Belén y guía de uso.
+
+## Publicación y cierre pendientes
+
+www sigue apuntando a infraestructura anterior; campus no resuelve según revisión del 16/09/2026. No modificar DNS sin coordinar Systeme, Hostinger y enlaces /school/* de alumnos.
+El acceso actual de comunidad responde; falta probar acceso autenticado a cursos.
+Pendientes reales: prueba ARS con endpoint actual, interés en Formación y todas las transiciones administrativas; identidad del Instagram de Agus.
+Dos detalles editoriales pendientes por pedido de Belén: quitar aclaración del checkbox de Formación y simplificar presentación de cotización. Esperar feedback antes de modificar.
+La publicación actual fue manual por Cloudflare Pages; actualizar GitHub no acredita conexión automática GitHub -> Pages.
