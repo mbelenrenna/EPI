@@ -18,11 +18,14 @@
       "texto002": "Nivel 2.",
       "texto003": "El Laboratorio del Juego",
       "texto004": "Grupos de estudio y laboratorios aplicados a todas las áreas de tu vida, usando las situaciones cotidianas para liberar programas limitantes y lealtades inconscientes, y así desbloquear tu pensamiento intuitivo.",
-      "texto005": "Cursada: enero y febrero 2027",
-      "texto006": "Duración: dos meses",
+      "texto005": "Enero y Febrero 2027",
+      "texto006": "dos meses",
+      "cursadaLabel": "Cursada:",
+      "duracionLabel": "Duración:",
+      "requisitoLabel": "Requisito:",
       "texto007": "Ver valor early bird",
       "texto008": "Conocer la experiencia ↓",
-      "texto009": "Requisito: certificación de InspirAcción Nivel 1."
+      "texto009": "certificado de InspirAcción Nivel 1."
     },
     "continuidad": {
       "texto001": "De método a filosofía de vida",

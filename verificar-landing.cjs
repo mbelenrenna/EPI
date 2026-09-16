@@ -5,7 +5,7 @@ assert(!html.includes('pricing.css')&&!html.includes('form.css'));
 assert(html.includes('class="nav-enroll" href="#inscripcion"'));
 assert(html.includes('Testimonios de participantes de InspirAcción Nivel 2.'));
 assert.equal((html.match(/<blockquote>/g)||[]).length,10);
-assert(html.includes('Cursada: enero y febrero 2027')&&html.includes('Duración: dos meses'));
+assert(html.includes('<strong>Cursada:</strong> Enero y Febrero 2027')&&html.includes('<strong>Duración:</strong> dos meses'));
 assert(!html.includes('No volvemos a explicar desde el principio'));
 assert(html.includes('<strong>Saliste del ego')&&html.includes('<strong>En Nivel 2</strong>'));
 assert.equal((html.match(/<footer>/g)||[]).length,1);

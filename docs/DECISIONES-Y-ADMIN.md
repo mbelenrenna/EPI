@@ -29,7 +29,7 @@ Diez testimonios aportados por Agustín en el documento de revisión como partic
 
 - Ruta permanente prevista: /programas/inspiraccion-nivel-2/ (sin año ni generación en URL).
 - Generación: 4. Cursada: enero y febrero de 2027; dos meses. Fecha exacta de inicio no confirmada.
-- Requisito comunicado: certificación de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
+- Requisito comunicado: certificado de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
 - Hasta 15/10/2026 inclusive: valor USD 300; reserva USD 150; saldo USD 150 hasta 05/01/2027.
 - Desde 16/10/2026 hasta 05/11/2026 inclusive: valor USD 350; reserva USD 175; saldo USD 175 hasta 05/01/2027.
 - Después del 05/11/2026: valor USD 400; pago completo. Cierre definitivo de inscripción pendiente; no inventar fecha.
