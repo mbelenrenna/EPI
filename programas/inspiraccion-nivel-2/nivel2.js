@@ -13,7 +13,7 @@
     cta: 'Quiero asegurar mi lugar con USD 175'
   } : {
     label: 'Inscripción · Cupos limitados', deadline: 'Valor vigente', value: 'USD 400',
-    copy: 'Este es el valor de lista de la experiencia. Escribinos para completar tu inscripción antes del inicio.',
+    copy: 'El valor de la experiencia es USD 400 y se abona completo. Tu lugar queda confirmado cuando el equipo verifica el pago.',
     cta: 'Quiero asegurar mi lugar'
   };
   root.querySelector('[data-stage-label]').textContent = stages.label;
@@ -74,12 +74,15 @@
           total.textContent = 'Importe a transferir: ARS ' + fmt.format(pesos);
           const source = document.createElement('p');
           source.className = 'quote-note';
-          source.textContent = 'Dólar blue venta: ARS ' + fmt.format(quote.sell) + ' por USD · Cotización actualizada por DólarHoy: ' + quote.updatedAt;
+          source.textContent = 'Cotización del dólar: ARS ' + fmt.format(quote.sell);
+          const updated = document.createElement('p');
+          updated.className = 'quote-note';
+          updated.textContent = 'Cotización actualizada: ' + quote.updatedAt;
           const link = document.createElement('a');
           link.href = 'https://dolarhoy.com/cotizaciondolarblue';
           link.target = '_blank'; link.rel = 'noopener';
           link.textContent = 'Ver la fuente en DólarHoy ↗';
-          block.append(total, source, link);
+          block.append(total, source, updated, link);
           detail += ' Equivalente mostrado: ARS ' + pesos + ', con blue venta ARS ' + quote.sell + ' (DólarHoy, ' + quote.updatedAt + ').';
         } else {
           block.textContent = 'No pudimos consultar la cotización. Antes de transferir, consultá el importe con Jose. No mostramos un valor anterior como si fuera actual.';
@@ -97,7 +100,8 @@
       const message = `Hola Jose, soy ${data.name}. Registré mis datos para InspirAcción Nivel 2 · Generación 4. Email: ${data.email}. WhatsApp: ${data.whatsapp}. País: ${data.country}. Nivel 1: ${data.generation}. Elegí ${form.elements.paymentMethod.selectedOptions[0].textContent}. ${detail} ${consultation ? 'Quisiera consultar las opciones de pago.' : 'Te envío el comprobante por acá.'}${interest}`;
       receipt.textContent = consultation ? 'Consultar el pago por WhatsApp' : 'Enviar comprobante por WhatsApp';
       receipt.href = `https://wa.me/5219981797419?text=${encodeURIComponent(message)}`;
-      form.hidden = true; result.hidden = false; result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      form.hidden = true; result.hidden = false; result.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     } catch (error) { status.textContent = error.message + ' Podés consultar a Jose por WhatsApp.'; button.disabled = false; }
   });
 })();
@@ -113,13 +117,18 @@
     nav.toggleAttribute('data-open', open);
   });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') { close(); button.focus(); } });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') { close(); button.focus(); } });
+  document.addEventListener('click', event => { if (!nav.contains(event.target) && !button.contains(event.target)) close(); });
   const targets = [...nav.querySelectorAll('a')].map(link => document.querySelector(link.hash)).filter(Boolean);
   if ('IntersectionObserver' in window) {
     const floating = document.querySelector('.jose-float');
     const enrollment = document.querySelector('#inscripcion');
     if (floating && enrollment) {
-      const formObserver = new IntersectionObserver(entries => { entries.forEach(entry => { floating.hidden = entry.isIntersecting; }); }, { threshold: 0 });
+      const covered = new Set();
+      const formObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) covered.add(entry.target); else covered.delete(entry.target); });
+        floating.hidden = covered.size > 0;
+      }, { threshold: 0 });
       formObserver.observe(enrollment);
     }
     const observer = new IntersectionObserver(entries => {

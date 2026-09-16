@@ -29,7 +29,7 @@ Diez testimonios aportados por Agustín en el documento de revisión como partic
 
 - Ruta permanente prevista: /programas/inspiraccion-nivel-2/ (sin año ni generación en URL).
 - Generación: 4. Cursada: enero y febrero de 2027; dos meses. Fecha exacta de inicio no confirmada.
-- Requisito comunicado por Agustín: certificado de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
+- Requisito comunicado: certificación de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
 - Hasta 15/10/2026 inclusive: valor USD 300; reserva USD 150; saldo USD 150 hasta 05/01/2027.
 - Desde 16/10/2026 hasta 05/11/2026 inclusive: valor USD 350; reserva USD 175; saldo USD 175 hasta 05/01/2027.
 - Después del 05/11/2026: valor USD 400; pago completo. Cierre definitivo de inscripción pendiente; no inventar fecha.
@@ -117,12 +117,12 @@ El admin completo y nuevas automatizaciones no se consideran incluidos automáti
 
 ### Footer único
 
-Pendiente solicitado por Belén: integrar “Seguí en contacto con la Escuela”, Instagram de Escuela, Instagram de Agus, podcast y solicitar sesión en el footer de la landing temporal. Evitar una franja que parezca un footer encima de otro.
+La landing temporal integra “Seguí en contacto con la Escuela”, Instagram de Escuela, Instagram de Agus, podcast y solicitar sesión en un solo footer.
 Al construir el ecosistema, extraer un único componente/footer compartido por todas las páginas y una única colección de enlaces. Conservar esos cuatro accesos básicos y sumar navegación/acceso alumno pertinente. No mantener versiones independientes por página.
-Por ahora sólo queda anotado: no cambiar la landing mientras Agustín revisa los textos.
+Los textos de la devolución de Agustín se aplican según la interpretación confirmada por Belén: mantener etiquetas de cursada/duración, botones originales de presentación, cuerpo de continuidad a la derecha, negritas y agrupación de testimonios. No conservar párrafos reemplazados como contenido adicional.
 
 www sigue apuntando a infraestructura anterior; campus no resuelve según revisión del 16/09/2026. No modificar DNS sin coordinar Systeme, Hostinger y enlaces /school/* de alumnos.
 El acceso actual de comunidad responde; falta probar acceso autenticado a cursos.
 Pendientes reales: prueba ARS con endpoint actual, interés en Formación y todas las transiciones administrativas; identidad del Instagram de Agus.
-Dos detalles editoriales pendientes por pedido de Belén: quitar aclaración del checkbox de Formación y simplificar presentación de cotización. Esperar feedback antes de modificar.
+El checkbox de Formación no lleva aclaración adicional. La cotización muestra valor y fecha/hora de actualización; se conserva blue venta de DólarHoy como referencia de cálculo.
 La publicación actual fue manual por Cloudflare Pages; actualizar GitHub no acredita conexión automática GitHub -> Pages.
