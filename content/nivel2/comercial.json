@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "programId": "inspiraccion-nivel-2",
+  "editionId": "nivel-2-g4-2027",
+  "currency": "USD",
+  "listValue": 400,
+  "balanceDue": "2027-01-05",
+  "commercialTimeZone": null,
+  "registrationClose": null,
+  "stages": [
+    {"id": "early-bird", "throughInclusive": "2026-10-15", "value": 300, "reserve": 150},
+    {"id": "segunda-etapa", "throughInclusive": "2026-11-05", "value": 350, "reserve": 175},
+    {"id": "lista", "throughInclusive": null, "value": 400, "reserve": 400}
+  ],
+  "paypalSurchargePercent": 5,
+  "arsQuote": {"source": "https://dolarhoy.com/cotizaciondolarblue", "type": "blue", "side": "venta"},
+  "status": "preparado-no-conectado-al-backend"
+}

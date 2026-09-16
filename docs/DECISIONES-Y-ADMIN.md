@@ -44,6 +44,8 @@ Las fechas/valores están hoy en JavaScript de la landing y Apps Script. Esto NO
 
 ## Operación actual
 
+“Sistema de reservas” nombra exclusivamente el flujo de InspirAcción Nivel 2 de la Escuela: formulario, Apps Script, planilla y Systeme. No se reutilizan cuentas, código operativo, contactos ni configuraciones de Nati.
+
 Formulario básico -> Apps Script de la cuenta de la Escuela -> Google Sheets y contacto/etiquetas en Systeme.
 Después de guardar, se muestran instrucciones de pago y WhatsApp preparado. La persona adjunta el comprobante y envía: no hay notificación automática a Jose sólo por completar el formulario.
 Equipo verifica el pago. Planilla controla pagos/saldo y estados; sincronización periódica con Systeme.
@@ -75,6 +77,18 @@ Hasta contar con admin, mantenimiento manual pactado; la propuesta comercial det
 
 ### Fuente única y controles
 
+Base inicial separada en este repositorio:
+
+- templates/nivel2.html: estructura y atributos de la landing.
+- content/nivel2/textos.json: textos agrupados por sección; extraídos del HTML aprobado sin redacción nueva.
+- content/nivel2/comercial.json: parámetros preparados de esta edición; zona horaria comercial y cierre no confirmados. NO conectado aún al navegador ni Apps Script.
+- scripts/build-nivel2.cjs: genera HTML de revisión desde plantilla y textos, escapando contenido. La prueba inicial generó HTML idéntico al aprobado.
+
+Ejemplo: node scripts/build-nivel2.cjs output/nivel2-preview.html
+
+La página publicada permanece intacta. Antes de cerrar la migración, el proceso de publicación debe consumir estos archivos y verificar que el HTML generado no se edite por separado. El admin escribirá en esta misma fuente; no importará/exportará copias manuales que se desactualicen.
+El Google Doc es revisión editorial, no una fuente automática de publicación. Guardar borradores no equivale a publicar; un cambio sólo llega a la web al aprobar/publicar y terminar exitosamente el despliegue.
+
 Separar contenido, configuración comercial y lógica técnica. El motor consume datos validados compartidos por web y backend; no mantener precios distintos en front y servidor.
 Separar programa estable de edición/generación. IDs y rutas estables; no modificar acuerdos ya confirmados al editar futuras etapas.
 Validar fechas ordenadas/no superpuestas, valores positivos, reserva/saldo/recargo, moneda, URLs seguras y contenido sin scripts.
@@ -100,6 +114,12 @@ El admin completo y nuevas automatizaciones no se consideran incluidos automáti
 7. Capacitación breve de Agustín y Belén y guía de uso.
 
 ## Publicación y cierre pendientes
+
+### Footer único
+
+Pendiente solicitado por Belén: integrar “Seguí en contacto con la Escuela”, Instagram de Escuela, Instagram de Agus, podcast y solicitar sesión en el footer de la landing temporal. Evitar una franja que parezca un footer encima de otro.
+Al construir el ecosistema, extraer un único componente/footer compartido por todas las páginas y una única colección de enlaces. Conservar esos cuatro accesos básicos y sumar navegación/acceso alumno pertinente. No mantener versiones independientes por página.
+Por ahora sólo queda anotado: no cambiar la landing mientras Agustín revisa los textos.
 
 www sigue apuntando a infraestructura anterior; campus no resuelve según revisión del 16/09/2026. No modificar DNS sin coordinar Systeme, Hostinger y enlaces /school/* de alumnos.
 El acceso actual de comunidad responde; falta probar acceso autenticado a cursos.
