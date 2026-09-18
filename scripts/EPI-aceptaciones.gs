@@ -46,7 +46,13 @@ function guardarAceptacionV2_(p){
    sheet.appendRow([date,legalText_(p.name,150),email,legalText_(p.document,40),record.program,ACCEPTANCE_VERSION,record.documentHash,record.documentUrl,record.consent,id,file.getUrl(),signature,'Pendiente','Pendiente','','Registrada · email sin confirmar']);row=sheet.getLastRow();
   }
  }finally{lock.releaseLock();}
- enviarAceptacionV2_(sheet,row);return sheet.getRange(row,10).getValue();
+ return sheet.getRange(row,10).getValue();
+}
+function hasVerifiedPaymentV2_(records,email){
+ return records.some(function(r){return String(r[2]||'').replace(/^'/,'').trim().toLowerCase()===email&&(r[14]==='Sí'||r[20]==='Sí')&&Number(r[22])>0&&!/cancelad|no continu|se cay[oó]/i.test(String(r[25]||''));});
+}
+function paymentRecordsV2_(){
+ SpreadsheetApp.flush();return SpreadsheetApp.openById(CONFIG.SHEET_ID).getSheetByName(CONFIG.SHEET_NAME).getRange(8,1,200,33).getValues();
 }
 function archivedV2_(id){
  if(!/^EPI-ACE-[-a-f0-9]{36}$/.test(id||''))throw Error('Identificador inválido');
@@ -56,10 +62,11 @@ function archivedV2_(id){
  return {file:file,archive:archive};
 }
 function tokenV2_(id){return sealV2_('confirm-email:'+id);}
-function enviarAceptacionV2_(sheet,row){
+function enviarAceptacionV2_(sheet,row,payments){
  const r=sheet.getRange(row,1,1,16).getValues()[0];if(!r[9])return;
  try{
   const data=archivedV2_(r[9]),record=data.archive.record;
+  if(!hasVerifiedPaymentV2_(payments||paymentRecordsV2_(),record.email))return;
   const verification=ScriptApp.getService().getUrl()+'?action=confirmAcceptance&id='+encodeURIComponent(record.id)+'&token='+tokenV2_(record.id);
   const body='Hola '+record.name+',\n\nRegistramos tu aceptación del Reglamento Interno y Términos de Participación de EPI.\nID: '+record.id+'\nFecha/hora (Argentina): '+Utilities.formatDate(new Date(record.acceptedAt),'America/Argentina/Buenos_Aires','yyyy-MM-dd HH:mm:ss')+'\nPrograma: '+record.program+'\nVersión: '+record.documentVersion+'\nTexto aceptado: '+record.consent+'\nCondiciones particulares: '+record.programCancellation+'\n\nAdjuntamos la copia exacta del reglamento y tu constancia. Esta constancia no confirma el pago ni el cupo.\nSi no realizaste esta solicitud, avisá a '+ACCEPTANCE_EMAIL+'.';
   const attachments=[Utilities.newBlob(ACCEPTANCE_DOCUMENT_TEXT,'text/plain','Reglamento-'+ACCEPTANCE_VERSION+'.txt'),Utilities.newBlob(JSON.stringify(data.archive,null,2),'application/json',record.id+'.json')];
@@ -69,8 +76,8 @@ function enviarAceptacionV2_(sheet,row){
 }
 function procesarAceptacionesV2_(){
  const sheet=SpreadsheetApp.openById(CONFIG.SHEET_ID).getSheetByName('Aceptaciones');if(!sheet||sheet.getLastRow()<2||sheet.getLastColumn()<16)return;
- const rows=sheet.getRange(2,1,sheet.getLastRow()-1,16).getValues();let count=0;
- rows.forEach(function(r,i){if(count<10&&r[9]&&(r[12]!=='Enviado'||r[13]!=='Enviado')&&r[15]!=='Error de integridad o respaldo · revisar'){enviarAceptacionV2_(sheet,i+2);count++;}});
+ const rows=sheet.getRange(2,1,sheet.getLastRow()-1,16).getValues(),payments=paymentRecordsV2_();let count=0;
+ rows.forEach(function(r,i){if(count<10&&r[9]&&hasVerifiedPaymentV2_(payments,String(r[2]).replace(/^'/,'').trim().toLowerCase())&&(r[12]!=='Enviado'||r[13]!=='Enviado')&&r[15]!=='Error de integridad o respaldo · revisar'){enviarAceptacionV2_(sheet,i+2,payments);count++;}});
 }
 function pageV2_(text,extra){return HtmlService.createHtmlOutput('<!doctype html><html lang="es"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EPI · Confirmación de correo</title><body style="font:16px/1.6 Arial,sans-serif;color:#302b2e;background:#faf7f5;padding:24px"><main style="max-width:600px;margin:auto"><h1 style="font-size:24px">Escuela del Pensamiento Intuitivo</h1><p>'+text+'</p>'+(extra||'')+'<p>Contacto: '+ACCEPTANCE_EMAIL+'</p></main></body></html>');}
 function validConfirmationV2_(p){return /^EPI-ACE-[-a-f0-9]{36}$/.test(p.id||'')&&/^[a-f0-9]{64}$/.test(p.token||'')&&tokenV2_(p.id)===p.token;}
