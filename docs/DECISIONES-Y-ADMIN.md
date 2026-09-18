@@ -78,7 +78,7 @@ Configuración vigente en content/nivel2/legal.json: URL, versión y aprobación
 
 Dos perfiles sobre la misma herramienta, con permisos aplicados por el servidor:
 
-Identidades aprobadas: Agustín accede con info@escueladelpensamientointuitivo.com; Belén con su email personal, aún por confirmar, como desarrolladora. No compartir credenciales ni deducir roles en el navegador. El admin debe permitir iniciar sesión con esas identidades; no exigir que Agustín manipule Git ni dar acceso técnico completo al repositorio para editar contenidos.
+Identidades aprobadas: Agustín accede con info@escueladelpensamientointuitivo.com; Belén con belitaablues@gmail.com como desarrolladora. Servicios y propiedad institucional bajo las cuentas de la Escuela; el email personal de Belén es un acceso autorizado. No compartir credenciales ni deducir roles en el navegador. El admin debe permitir iniciar sesión con esas identidades; no exigir que Agustín manipule Git ni dar acceso técnico completo al repositorio para editar contenidos. La edición y publicación deben poder realizarse sin Codex, con guía de uso y recuperación guardada en el proyecto.
 
 | Perfil | Puede administrar | Requiere trabajo técnico |
 |---|---|---|
