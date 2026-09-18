@@ -7,6 +7,7 @@ const CONFIG = Object.freeze({
 function doPost(e) {
   const lock = LockService.getScriptLock();
   try {
+    if(e && e.parameter && e.parameter.action === 'confirmAcceptance') return confirmarAceptacionV2_(e.parameter);
     const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
     if(payload.action === 'revocation') return registrarArrepentimiento_(payload);
     validate_(payload);
@@ -48,7 +49,10 @@ function doPost(e) {
   finally { if (lock.hasLock()) lock.releaseLock(); }
 }
 
-function doGet() { return json_({ ok: true, service: 'InspirAcción Nivel 2 · Generación 4', legalVersion: '2026-09-18', revocationReady: true }); }
+function doGet(e) {
+ if(e && e.parameter && e.parameter.action === 'confirmAcceptance') return paginaConfirmacionV2_(e.parameter);
+ return json_({ ok: true, service: 'InspirAcción Nivel 2 · Generación 4', legalVersion: '2026-09-18', revocationReady: true, acceptanceVersion: 2 });
+}
 function legalSheet_(name,headers) {
   const book=SpreadsheetApp.openById(CONFIG.SHEET_ID);
   const sheet=book.getSheetByName(name)||book.insertSheet(name);
@@ -61,11 +65,7 @@ function legalText_(value,max) {
   return /^[=+@-]/.test(text)?"'"+text:text;
 }
 function registrarAceptacion_(p) {
-  if(p.consent!=='on'||p.reglamentoVersion!=='2026-09-18'||!/^[a-f0-9]{64}$/.test(p.reglamentoHash||''))throw new Error('Falta aceptación del reglamento vigente');
-  const sheet=legalSheet_('Aceptaciones',['Fecha/hora servidor','Nombre','Email','Documento','Programa','Versión reglamento','Hash documento','URL documento','Aceptación']);
-  const lock=LockService.getScriptLock();lock.waitLock(20000);
-  try{sheet.appendRow([new Date(),legalText_(p.name,150),legalText_(p.email,200),legalText_(p.document,40),'InspirAcción Nivel 2 · G4','2026-09-18',p.reglamentoHash,'https://www.escueladelpensamientointuitivo.com/legal/reglamento-interno/2026-09-18/','He leído y acepto el Reglamento Interno y Términos de Participación de EPI.']);}
-  finally{lock.releaseLock();}
+  return guardarAceptacionV2_(p);
 }
 function registrarArrepentimiento_(p) {
   if(p.website||!/^[-a-f0-9]{36}$/.test(p.requestId||'')||!/^\S+@\S+\.\S+$/.test(p.email||'')||!/^\d{4}-\d{2}-\d{2}$/.test(p.enrollmentDate||''))throw new Error('Datos inválidos');
@@ -88,6 +88,7 @@ function notificarArrepentimiento_(sheet,row) {
   if(r[9]!=='Enviado')try{MailApp.sendEmail({to:String(r[4]).replace(/^'/,''),subject:'EPI · Constancia de solicitud · '+r[0],body:body,replyTo:'info@escueladelpensamientointuitivo.com'});sheet.getRange(row,10).setValue('Enviado');}catch(e){sheet.getRange(row,10).setValue('Pendiente de reintento');}
 }
 function procesarNotificacionesLegales(){
+  procesarAceptacionesV2_();
   const sheet=SpreadsheetApp.openById(CONFIG.SHEET_ID).getSheetByName('Arrepentimientos');if(!sheet||sheet.getLastRow()<2)return;
   const records=sheet.getRange(2,1,sheet.getLastRow()-1,11).getValues();let count=0;
   records.forEach(function(r,i){if(count<10&&(r[8]!=='Enviado'||r[9]!=='Enviado')){notificarArrepentimiento_(sheet,i+2);count++;}});

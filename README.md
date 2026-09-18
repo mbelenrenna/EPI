@@ -24,6 +24,7 @@ Los cursos, la comunidad y los accesos de alumnos permanecen alojados en Systeme
 - [Decisiones vigentes, parámetros y admin](docs/DECISIONES-Y-ADMIN.md).
 - [Norte del proyecto](NORTE-DEL-PROYECTO.md).
 - [Voz editorial](VOZ-Y-CRITERIOS.md).
+- [Aceptación electrónica: activación, respaldo y pruebas](docs/ACEPTACION-ELECTRONICA.md).
 
 URL publicada: https://www.escueladelpensamientointuitivo.com/inspiraccion/nivel-2/.
 El admin privado y la publicación automática son implementaciones en curso, no funciones ya disponibles. La landing aprobada se conserva.

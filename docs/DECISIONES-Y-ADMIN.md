@@ -49,6 +49,8 @@ Las fechas/valores están hoy en JavaScript de la landing y Apps Script. Esto NO
 
 ## Operación actual
 
+Circuito reforzado de aceptación preparado en scripts/EPI-aceptaciones.gs: respaldo privado Drive con sello técnico HMAC, correos a ambos destinatarios con reglamento adjunto y enlace de confirmación explícita. Pruebas locales aprobadas; falta instalar/autorizar y actualizar Apps Script, y prueba real. No afirmar que está desplegado por haber subido el código a GitHub. Guía independiente del chat: docs/ACEPTACION-ELECTRONICA.md. No es firma digital certificada ni almacenamiento inmutable; IP e identidad documental no verificadas.
+
 “Sistema de reservas” nombra exclusivamente el flujo de InspirAcción Nivel 2 de la Escuela: formulario, Apps Script, planilla y Systeme. No se reutilizan cuentas, código operativo, contactos ni configuraciones de Nati.
 
 Formulario básico -> Apps Script de la cuenta de la Escuela -> Google Sheets y contacto/etiquetas en Systeme.
