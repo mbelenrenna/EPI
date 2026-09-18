@@ -5,7 +5,10 @@ Este documento describe el estado aprobado, los parámetros reutilizables y la a
 ## Estado y fuente del proyecto
 
 Repositorio: https://github.com/mbelenrenna/EPI
-Publicación actual de prueba: https://escuela-pensamiento-intuitivo.pages.dev/programas/inspiraccion-nivel-2/
+URL definitiva publicada: https://www.escueladelpensamientointuitivo.com/inspiraccion/nivel-2/
+Cloudflare Pages sigue alojando los archivos; el Worker epi-web-routes sirve únicamente la landing y páginas legales en www. CNAME www mantiene d236a02jhneff0.cloudfront.net con proxy habilitado; /school y los restantes recorridos siguen apuntando a Systeme. No se migraron cursos a campus todavía. MX y registros de correo no se modificaron. La ruta antigua de www /programas/inspiraccion-nivel-2/ redirige a la definitiva.
+Reglamento completo, literal, versión 2026-09-18: /legal/reglamento-interno/. Copia por versión: /legal/reglamento-interno/2026-09-18/. Condiciones particulares de Nivel 2 G4: /legal/inspiraccion-nivel-2-g4/. Condición de cancelación exactamente aprobada por Belén. Contacto institucional y destino de notificaciones: info@escueladelpensamientointuitivo.com.
+Formulario de arrepentimiento: /arrepentimiento/. Apps Script de la Escuela actualizado y autorizado. Belén confirmó registro privado en Sheets, código visible y recepción de ambos correos, al equipo y al participante. Llegaron a Spam: entrega a Recibidos pendiente de optimización. El frontend usa POST /arrepentimiento/enviar en el Worker (mismo origen), que valida y reenvía al Apps Script: no consultar el POST de Google directamente desde el navegador. Los reintentos mantienen el mismo ID para no duplicar pedidos. Fuente servidor: scripts/EPI-inscripciones.gs; registro de aceptación con documento, fecha de servidor, versión y hash. IP verificada y Jotform posterior siguen pendientes.
 La landing consolidada es la versión visual aprobada por Belén en escritorio y celular. Los cambios editoriales de Agustín se revisan primero en su Google Doc y luego se aplican; no sincronizar ese documento automáticamente con la web.
 Documento de revisión: https://docs.google.com/document/d/1C2L1rb85k8ReD59DzyUU3skldS4_pCgS69gmmW0XwnA/edit
 El documento es accesible mediante el conector. La devolución de Agustín se aplica por pedido de Belén, con correcciones ortográficas y sintácticas sin introducir ideas nuevas. Los comentarios editoriales no aparecen en la web.
@@ -24,11 +27,12 @@ InspirAcción es entrenamiento y experiencia, no un catálogo de cursos. Nivel 2
 Invitaciones visibles después de identificación, experiencia, formato, beneficio y testimonios; inscripción directa desde navegación.
 Menú móvil, anclas nativas suaves, foco de teclado, reducción de movimiento y preguntas desplegables. Contacto con Jose; no tapar campos con elementos flotantes.
 La landing temporal es independiente: los logos del encabezado y footer no enlazan a la Home/hub aún en preparación. Escala móvil contenida: títulos de sección 25px, presentación 32px, lectura general 15px; controles de formulario 16px. Fotos y espaciados móviles compactos sin modificar la escala de escritorio.
-Diez testimonios aportados por Agustín en el documento de revisión como participantes de Nivel 2, agrupados en cambios de percepción y cambios concretos. Conservar la redacción de las citas y los nombres abreviados proporcionados. Guadalupe incluye referencia a N1, N2 y Formación.
+Diez testimonios aportados por Agustín en el documento de revisión como participantes de Nivel 2, agrupados en cambios de percepción y cambios concretos. Conservar la redacción de las citas y los nombres abreviados proporcionados. Guadalupe figura sólo como Guadalupe F, sin niveles ni Formación.
+Footer desktop: logo a la izquierda, contactos y correo institucional a la derecha, legales debajo del copyright con tipografía coherente. Mobile: logo primero, contactos después, copyright y legales al final con separador sutil y escala compacta. Botón de Arrepentimiento sólo en el footer de la landing, sin franja superior. Favicon: símbolo del logo actual sin texto, generado como SVG desde el bitmap aprobado, sin alterar el archivo original.
 
 ## Parámetros vigentes de Nivel 2
 
-- Ruta permanente prevista: /programas/inspiraccion-nivel-2/ (sin año ni generación en URL).
+- Ruta permanente publicada: /inspiraccion/nivel-2/ (sin año ni generación en URL). La ruta antigua /programas/inspiraccion-nivel-2/ de www redirige a ella.
 - Generación: 4. Cursada: enero y febrero de 2027; dos meses. Fecha exacta de inicio no confirmada.
 - Requisito comunicado: certificado de InspirAcción Nivel 1. La verificación sigue a cargo del equipo; no exigir carga de documento sin definir ese proceso.
 - Hasta 15/10/2026 inclusive: valor USD 300; reserva USD 150; saldo USD 150 hasta 05/01/2027.
@@ -52,11 +56,29 @@ Después de guardar, se muestran instrucciones de pago y WhatsApp preparado. La 
 Equipo verifica el pago. Planilla controla pagos/saldo y estados; sincronización periódica con Systeme.
 Etiqueta principal NIVEL 2 - G4; estados administrados Reserva iniciada, Pago confirmado, Inscripción completa, Cancelado, No continuó; interés en Formación separado.
 Claves sólo del lado servidor/propiedades del script; nunca en el admin público ni en Git.
-Formulario posterior previsto en Jotform para datos del proceso y aceptación documentada; condiciones esenciales conocidas antes de pagar. Validación legal y mecanismo de firma pendientes.
+Formulario posterior previsto en Jotform para datos del proceso y aceptación documentada; condiciones esenciales conocidas y aceptación registrada antes de pagar. Validación legal y mecanismo de firma pendientes. No confundir el formulario básico previo al pago de la landing con este formulario posterior.
+
+### Reglamento y evidencia de aceptación
+
+Por autorización expresa de Belén, se publicó literalmente el reglamento entregado, versión 2026-09-18, con enlace desde aceptación y footer. La copia de esa versión debe conservarse para acreditar el documento aceptado. Las condiciones particulares incluyen exactamente: «Una vez vencido el plazo legal de revocación aplicable, no se realizan devoluciones por cancelación voluntaria del participante». La publicación técnica no acredita una revisión jurídica del reglamento; ésta sigue pendiente.
+
+Preparar Jotform desde la cuenta de la Escuela. Registro previsto: nombre completo, email, tipo/número de DNI o pasaporte y país emisor, programa/generación, identificador de envío, aceptación expresa sin premarcar, versión y copia exacta del reglamento aceptado, fecha/hora de servidor e IP capturada por el proveedor. Mostrar fecha/hora argentina conservando el instante original. Verificar captura y exportación real mediante prueba antes de afirmar que funciona. Pedir número de documento no equivale a verificar identidad; no exigir foto del documento por defecto.
+
+Checkbox aprobado, último campo antes de enviar: «He leído y acepto el Reglamento Interno y Términos de Participación de EPI.». Enlazar únicamente el nombre del documento al texto completo. Guardar evidencia en almacenamiento privado de la Escuela y enviar copia al participante. Valorar Jotform Sign con trazabilidad y verificación por correo si se busca evidencia adicional, sin presentarlo como firma digital certificada ni garantía de validez jurídica.
+
+La aceptación posterior no debe ser la primera oportunidad de leer y aceptar las condiciones: incluir aceptación registrada también antes de mostrar los medios de pago. No sustituir simplemente el consentimiento de datos sin revisar el aviso de privacidad; no convertirlo en consentimiento de marketing. Revisar por separado confidencialidad y autorización para difusión pública de imagen/voz.
+
+Footer aprobado: copyright en su renglón; debajo, Reglamento Interno y Términos de Participación, condiciones particulares y Botón de Arrepentimiento. Nota bajo el botón de pago: «Cupos limitados, las condiciones de inscripción, pago y baja están detalladas en el reglamento interno». Texto pequeño gris sin caja ni icono.
+
+Pendientes: revisión legal del documento, formulario Jotform real e IP verificada, integración de su evidencia con Sheets/Systeme, restricciones de acceso y conservación de datos, prueba de aceptación previa al pago desde el dominio definitivo. El checkbox, la IP y el documento son evidencia, no una garantía jurídica por sí solos.
+
+Configuración vigente en content/nivel2/legal.json: URL, versión y aprobación del reglamento publicado. Documento obligatorio y checkbox sin premarcar antes de mostrar los medios de pago. El Apps Script registra aceptación, fecha del servidor, documento, versión y hash en Aceptaciones. No reutilizar una versión existente para modificar el texto legal.
 
 ## Administración objetivo
 
 Dos perfiles sobre la misma herramienta, con permisos aplicados por el servidor:
+
+Identidades aprobadas: Agustín accede con info@escueladelpensamientointuitivo.com; Belén con su email personal, aún por confirmar, como desarrolladora. No compartir credenciales ni deducir roles en el navegador. El admin debe permitir iniciar sesión con esas identidades; no exigir que Agustín manipule Git ni dar acceso técnico completo al repositorio para editar contenidos.
 
 | Perfil | Puede administrar | Requiere trabajo técnico |
 |---|---|---|
@@ -122,7 +144,7 @@ La landing temporal integra “Seguí en contacto con la Escuela”, Instagram d
 Al construir el ecosistema, extraer un único componente/footer compartido por todas las páginas y una única colección de enlaces. Conservar esos cuatro accesos básicos y sumar navegación/acceso alumno pertinente. No mantener versiones independientes por página.
 Los textos de la devolución de Agustín se aplican según la interpretación confirmada por Belén: mantener etiquetas de cursada/duración, botones originales de presentación, cuerpo de continuidad a la derecha, negritas y agrupación de testimonios. No conservar párrafos reemplazados como contenido adicional.
 
-www sigue apuntando a infraestructura anterior; campus no resuelve según revisión del 16/09/2026. No modificar DNS sin coordinar Systeme, Hostinger y enlaces /school/* de alumnos.
+www mantiene el destino CNAME de Systeme con proxy Cloudflare: sólo las rutas explícitas de landing y legales se sirven desde Pages. El acceso anterior /school/course/inspiraccion2 respondió HTTP 200 tras la publicación; los cursos no se migraron. campus está preparado en DNS, pero su raíz devuelve 404: no presentarlo como acceso operativo ni reemplazar enlaces de alumnos todavía.
 El acceso actual de comunidad responde; falta probar acceso autenticado a cursos.
 Pendientes reales: prueba ARS con endpoint actual, interés en Formación y todas las transiciones administrativas.
 El checkbox de Formación no lleva aclaración adicional. La cotización muestra valor y fecha/hora de actualización; se conserva blue venta de DólarHoy como referencia de cálculo.

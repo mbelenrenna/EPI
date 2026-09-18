@@ -39,7 +39,7 @@
       "texto009": "Nivel 2 presenta algo más que un método: una filosofía de vida cuya asimilación requiere necesariamente haber atravesado el nivel de compromiso práctico que ocurre en “El Entrenamiento del Guerrero” (Nivel 1)."
     },
     "frase": {
-      "texto001": "“La acción inspirada es la habilidad de invertir las polaridades de nuestras percepciones para develar el propósito de lo que nos ocurre en la vida.”",
+      "texto001": "“Accionar distinto es la habilidad de invertir las polaridades de nuestras percepciones para develar el propósito de lo que nos ocurre en la vida.”",
       "texto002": "Escuela del Pensamiento Intuitivo"
     },
     "experiencia": {
@@ -76,8 +76,8 @@
     "sesiones": {
       "texto001": "Un beneficio por seguir entrenando",
       "texto002": "40% de descuento en sesiones individuales con Agus.",
-      "texto003": "Parte de la esencia de la Escuela es asumir tu libertad de potenciar tu camino con una guía personalizada. Las sesiones 1-1 del MCI guiadas por Agustín son procesos de acompañamiento de corta duración (entre 1 y 3 sesiones).",
-      "texto004": "Por eso, mientras seas alumno regular y estés cursando en cualquiera de nuestros programas, contás con un 40% de descuento en las sesiones uno a uno con Agus.",
+      "texto003": "Parte de la esencia de la escuela es asumir tu libertad de potenciar tu camino con una guía personalizada. Las sesiones 1-1 del MCI guiadas por Agustín son procesos de acompañamiento de corta duración (entre 1 y 3 sesiones).",
+      "texto004": "Por eso, mientras seas alumno regular y estés cursando en cualquiera de nuestros programas, contás con este beneficio.",
       "texto005": "Quiero continuar mi entrenamiento →"
     },
     "testimonios": {
@@ -90,7 +90,7 @@
       "items": [
         {
           "texto": "“Descubrí que puedo elegir como actuar o responder ante ciertas situaciones y sentirme libre con eso. Puede también experimentar la sensación de no desesperarme por resolver y habitar la incertidumbre.”",
-          "nombre": "Guadalupe F · N1, N2 y Formación"
+          "nombre": "Guadalupe F"
         },
         {
           "texto": "“InspirAcción a diferencia de otros programas, te da herramientas REALES Y PRÁCTICAS para aplicar HOY en tu vida. No te pide nada que no tengas, no subestima, al contrario, te obliga amorosamente a ponerse en el lugar de creador que te corresponde como ser humano.”",
@@ -205,6 +205,8 @@
       "texto020": "Hasta el 15 de octubre de 2026, el valor early bird es de USD 300. Lo congelás abonando una reserva de USD 150 (el 50%). El saldo de USD 150 debe estar abonado a más tardar el 5 de enero de 2027. Tu reserva queda confirmada cuando el equipo verifica el pago.",
       "texto021": "¿Puedo pagar en otra moneda?",
       "texto022": "+",
+      "terapiaPregunta": "¿InspirAcción es una terapia?",
+      "terapiaRespuesta": "No. InspirAcción es un programa educativo y de desarrollo personal centrado en el Método Contraintuitivo. No reemplaza un tratamiento psicológico ni médico — muchos participantes lo cursan en paralelo a su proceso terapéutico, como un espacio complementario de trabajo emocional y reflexión.",
       "texto023": "Sí. Si elegís pesos argentinos, vas a ver el importe de la reserva calculado con el dólar blue venta de DólarHoy, junto con la fecha y hora de actualización de la cotización. Si elegís dólares, te mostramos los medios de pago disponibles. Para otra moneda, tenés un acceso directo a WhatsApp para consultar con Jose la cotización del día y el medio de pago adecuado."
     },
     "cierre": {
